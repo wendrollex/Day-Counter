@@ -3,7 +3,7 @@
  const minsEl = document.getElementById("mins");
  const secEl = document.getElementById("sec"); 
 
- const newYear = '01 jan 1101';
+ const newYear = '16 oct 2023'; 
 
   function countdown(){
       const newYearDate = new Date(newYear);
