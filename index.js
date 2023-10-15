@@ -1,30 +1,36 @@
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minsEl = document.getElementById("mins");
-const secEl = document.getElementById("sec");
+        const daysEl = document.getElementById("days");
+ const hoursEl = document.getElementById("hours");
+ const minsEl = document.getElementById("mins");
+ const secEl = document.getElementById("sec"); 
 
-// दिनांक 15 अक्टूबर 2023 14:50 निर्धारित करें।
-const newYear = new Date('2023-10-15T14:50:00').getTime();
+ const newYear = '01 jan 1101';
 
-function countdown() {
-    const currentDate = new Date().getTime();
-    const totalSeconds = (newYear - currentDate) / 1000;
+  function countdown(){
+      const newYearDate = new Date(newYear);
+      const currentDate = new Date();
 
-    const days = Math.floor(totalSeconds / 3600 / 24);
-    const hours = Math.floor(totalSeconds / 3600) % 24;
-    const mins = Math.floor(totalSeconds / 60) % 60;
-    const seconds = Math.floor(totalSeconds) % 60;
+      const totalSeconds = (currentDate- newYearDate)/1000;
 
-    daysEl.innerHTML = days;
-    hoursEl.innerHTML = formatTime(hours);
-    minsEl.innerHTML = formatTime(mins);
-    secEl.innerHTML = formatTime(seconds);
-}
+      const days = Math.floor(totalSeconds/3600/24);
+      const hours = Math.floor(totalSeconds/3600) % 24;
 
-function formatTime(time) {
-    return time < 10 ? "0" + time : time;
-}
+      const mins = Math.floor(totalSeconds/60) % 60;
+      const seconds = Math.floor(totalSeconds) % 60;
 
-countdown();
+    daysEl.innerHTML=days;
+     hoursEl.innerHTML=formatTime(hours);
+     minsEl.innerHTML= formatTime(mins);
+     secEl.innerHTML=formatTime(seconds);
+     
+  }
+  function formatTime(time){
+      if (time < 10) {
+          return ("0"+time)
+      } else {
+          return time
+      }
+  }
 
-setInterval(countdown, 1000);
+  countdown();
+
+  setInterval(countdown, 1000);
