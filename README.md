@@ -1,2 +1,2 @@
-# Day-Counter-
+# Day-Counter
 Simple website to count days.
